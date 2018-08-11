@@ -1,0 +1,45 @@
+/* components/ticket/ticket.wxss */
+.activity{
+  display: flex;
+  padding: 20rpx 0;
+  height: 180rpx;
+  border-bottom: 1rpx solid #e6e6e6;
+}
+.poster{
+  flex: 1;
+  padding-left: 20rpx;
+}
+.data{
+  flex: 3
+}
+.name{
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.date,.getTime{
+  padding-top: 10rpx;
+  font-size: 30rpx;
+}
+.type{
+  flex: 1;
+  text-align: right;
+  padding-right:20rpx; 
+}
+.waiting,.start,.finish{
+  display: inline-block;
+  font-size: 24rpx;
+  padding: 5rpx;
+  border-radius: 5rpx;
+}
+.waiting{
+  border: 1rpx solid #ffc34d;
+  color: #ffc34d;
+}
+.start{
+  border: 1rpx solid #009933;
+  color: #009933;
+}
+.finish{
+  border: 1rpx solid #ccc;
+  color: #ccc;
+}

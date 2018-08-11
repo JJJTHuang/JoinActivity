@@ -1,0 +1,4 @@
+<!--pages/me/changeMessage/changeMessage.wxml-->
+<view class='applyForm'>
+    <formcontent student="{{student}}" id="student" buttonName="确认修改" bind:action='submit'></formcontent>
+</view>

@@ -1,0 +1,17 @@
+<!--components/activity/activity.wxml-->
+<view class='activity'>
+  <view class='poster'>
+    <image src='{{activity.posters[0]}}' mode='widthFix' style='width:120rpx;'></image>
+  </view>
+  <view class='data'>
+    <view class='name'>{{activity.title}}</view>
+    <view class='date'>报名时间：{{activity.startDate+'-'+activity.deadline}}</view>
+    <view class='tel'>活动联系人：{{activity.cPhone}}</view>
+  </view>
+  <view class='type'>
+    <view class='waiting' wx:if="{{activity.state==0}}">未开始</view>
+    <view class='start' wx:elif="{{activity.state==1}}">可报名</view>
+    <view class='finish' wx:else>已结束</view>
+  </view>
+  <slot></slot>
+</view>

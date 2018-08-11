@@ -1,0 +1,17 @@
+<!--components/ticket/ticket.wxml-->
+<view class='activity'>
+  <view class='poster'>
+    <image src='{{ticket.posters[0]}}' mode='widthFix' style='width:120rpx;'></image>
+  </view>
+  <view class='data'>
+    <view class='name'>{{ticket.title}}</view>
+    <view class='date'>演出时间：{{ticket.showTime}}</view>
+    <view class='getTime'>抢票时间：{{ticket.saletime}}</view>
+  </view>
+  <view class='type'>
+    <view class='waiting' wx:if="{{ticket.state==0}}">未开始</view>
+    <view class='start' wx:elif="{{ticket.state==1}}">抢票中</view>
+    <view class='finish' wx:else>已结束</view>
+  </view>
+  <slot></slot>
+</view>

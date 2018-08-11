@@ -1,0 +1,59 @@
+/* pages/ticket/ticket.wxss */
+
+.hot {
+  padding: 10rpx 0rpx;
+  background-color: #fff;
+}
+
+.hot_title {
+  padding: 20rpx;
+  font-weight: bold;
+  font-size: 38rpx;
+}
+
+.post {
+  /* text-align: center; */
+}
+
+.poster {
+  clear: both;
+  display: block;
+  margin: auto;
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 90rpx;
+  overflow: hidden;
+}
+
+.scroll {
+  display: flex;
+  flex-direction: row;
+}
+
+.scroll-view_H {
+  height: 100%;
+  white-space: nowrap;
+  /* white-space: pre-wrap;  */
+}
+
+.hot_item {
+  display: inline-block;
+  width: 40%;
+  text-align: center;
+  padding: 20rpx 0;
+}
+
+.name {
+  font-size: 32rpx;
+}
+
+.time {
+  font-size: 30rpx;
+  color: #707070;
+}
+.nomore,.show-null{
+  font-size: 34rpx;
+  color: #707070;
+  padding: 20rpx 0;
+  text-align: center
+}

@@ -1,0 +1,11 @@
+<!--components/me_item/me_item.wxml-->
+<view class='item'>
+  <view class='img'>
+    <image src='{{img}}' style='width:24px;height:24px;'></image>
+  </view>
+  <view class='name'>{{name}}</view>
+  <view class='detail'>
+    <image src='../../images/icon/right.png' style='width:20px;height:20px;'></image>
+  </view>
+</view>
+<view class='line'></view>

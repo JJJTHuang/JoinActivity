@@ -1,0 +1,23 @@
+<!--components/form/form.wxml-->
+<form bindsubmit="formSubmit">
+  <view class='item'>
+    <view class='itemTitle'>社团/组织</view>
+    <view class='mas'>
+      <input type="text" placeholder="请输入所属社团/组织" placeholder-class="holder" name="identity" value='{{student.identity}}'></input>
+    </view>
+  </view>
+  <view class='item_tips'>
+    <view class='tips'>
+      eg:第九届篮协信息部部长(每个社团仅有3个名额可发布或删除活动,请提交申请前谨慎选择发布者)
+    </view>
+  </view>
+  <view class='item'>
+    <view class='itemTitle'>身份证</view>
+    <view class='mas'>
+      <input type="text" placeholder="请输入身份证" placeholder-class="holder" name="idcard" value='{{student.organization}}'></input>
+    </view> 
+  </view>
+  <view class='item'>
+    <button form-type="submit">{{buttonName}}</button>
+  </view>
+</form>

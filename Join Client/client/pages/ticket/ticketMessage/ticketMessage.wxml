@@ -1,0 +1,49 @@
+<!--pages/ticket/ticketMessage/ticketMessage.wxml-->
+<view class='content'>
+  <view class='head'>
+    <view class='poster'>
+      <image src='{{show.posters[0]}}' mode='widthFix' style='width:220rpx;'></image>
+    </view>
+    <view class='data'>
+      <view class='name'>{{show.title}}</view>
+      <view class='date'>演出时间：{{show.showTime}}</view>
+      <view class='sponser'>抢票时间：{{show.saletime}}</view>
+      <view class='tel'>联系人：{{show.cPhone}}</view>
+      <view class='type'>
+        <view class='waiting' wx:if="{{show.state==0}}">未开始</view>
+        <view class='start' wx:elif="{{show.state==1}}">抢票中</view>
+        <view class='finish' wx:else>已结束</view>
+      </view>
+      <view class='love' bindtap='changeLove'>
+        <image src="{{loved?'/images/icon/love_1.png':'/images/icon/love_0.png'}}" mode="widthFix" style='width:70rpx;'></image>
+      </view>
+    </view>
+  </view>
+  <view class='detail'>
+    <view class='title'>演出详情</view>
+    <view class='text'>{{show.detail}}</view>
+    <!-- <view class='title'>抢票二维码</view>
+    <view class='QRcode'>
+      <image src='/images/icon/QRcode.png' style='width:300rpx;height:300rpx;'></image>
+    </view> -->
+    <view class='title'>演出海报/传单</view>
+    <view class='img' wx:for="{{show.posters}}" wx:key="unique">
+      <image src='{{item}}' mode='widthFix' style='width:100%;'></image>
+    </view>
+  </view>
+  <view wx:if="{{show_show}}" class='join'>
+    <view wx:if="{{!login}}">
+      <button style='color:rgb(255,255,255)' bindtap="goLogin">去登录</button>
+    </view>
+    <view wx:else>
+      <button style='color:rgba(255,255,255,0.6)' wx:if="{{show.state==0}}">本活动未开始</button>
+      <view wx:elif="{{joined}}">
+        <view class='tips'>你已参加本活动，如要取消请拨打联系人电话，如要修改资料可在演出前一天前到我的/报名信息内修改，最终报名信息以该表为准。</view>
+        <button style='color:rgba(255,255,255,0.6)'>你已参与本活动</button>
+      </view>
+      <button style='color:rgba(255,255,255,0.6)' wx:elif="{{!joined && show.state==1 && show.full == true}}">本活动名额已满</button> 
+      <button bindtap='ticketFrom' wx:elif="{{!joined && show.state==1 && show.full == false}}">马上抢票</button>
+      <button style='color:rgba(255,255,255,0.6)' wx:else>本活动已结束</button>
+    </view>
+  </view>
+</view>

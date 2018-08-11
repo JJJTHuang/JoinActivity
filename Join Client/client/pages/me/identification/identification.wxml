@@ -1,0 +1,3 @@
+<view class='applyForm'>
+    <formIdentity student="{{user}}" id="student" buttonName="提交" bind:action='submit'></formIdentity>
+</view>

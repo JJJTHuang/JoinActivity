@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "addForm": "/components/addForm/addForm"
+  }
+}

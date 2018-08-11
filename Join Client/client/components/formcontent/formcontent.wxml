@@ -1,0 +1,42 @@
+<!--components/form/form.wxml-->
+<form bindsubmit="formSubmit">
+  <view class='item'>
+    <view class='itemTitle'>姓名</view>
+    <view class='mas'>
+      <input type='text' placeholder='请输入真实姓名' placeholder-class="holder" name="name" value='{{student.name}}'></input>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='itemTitle'>学号</view>
+    <view class='mas'>
+      <input type="number" placeholder='请输入学号' placeholder-class="holder" name="stuNum" value='{{student.stuNum}}'></input>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='itemTitle'>班号</view>
+    <view class='mas'>
+      <input type="number" placeholder="请输入班级编号" placeholder-class="holder" name="classNum" value='{{student.classNum}}'></input>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='itemTitle'>手机号码</view>
+    <view class='mas'>
+      <input type="number" placeholder="请输入联系电话" placeholder-class="holder" name="phoneNum" value='{{student.phoneNum}}'></input>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='itemTitle'>邮箱地址</view>
+    <view class='mas'>
+      <input type="text" placeholder="请输入邮箱地址" placeholder-class="holder" name="email" value='{{student.email}}'></input>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='itemTitle'>学系专业</view>
+    <view class='mas'>
+      <input type="text" placeholder="请输入学系专业" placeholder-class="holder" name="subject" value='{{student.subject}}'></input>
+    </view>
+  </view>
+  <view class='item'>
+    <button form-type="submit">{{buttonName}}</button>
+  </view>
+</form>

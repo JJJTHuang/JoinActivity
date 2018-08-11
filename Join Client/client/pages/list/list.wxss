@@ -1,0 +1,10 @@
+/* pages/list/list.wxss */
+.tips{
+  padding: 20rpx;
+}
+.nomore,.show-null{
+  font-size: 34rpx;
+  color: #707070;
+  padding: 20rpx 0;
+  text-align: center
+}

@@ -1,0 +1,124 @@
+<!--components/addForm/addForm.wxml-->
+<form bindsubmit="formSubmit">
+  <view class='item'>
+    <view class='itemTitle'>活动名称</view>
+    <view class='mas'>
+      <input type='text' placeholder='请输入活动名称' placeholder-class="holder" name="title" value='{{passData.title || title}}'></input>
+    </view>
+  </view>
+
+  <view wx:if="{{choose=== 'activity'}}" class='item'>
+    <view class='itemTitle'>截止日期</view>
+    <view class='mas'>
+      <picker name="deadline" mode="date" value="{{pdeadline || deadline}}" start="2018-06-01" end="2018-12-01" bindchange="binddeadlineChange">
+        <view class="picker">
+          {{pdeadline || deadline}}
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view wx:else class='item'>
+    <view class='itemTitle'>演出时间</view>
+    <view class='mas'>
+      <picker name="showTime" mode="date" value="{{pshowTime || showTime}}" start="2018-06-01" end="2018-12-01" bindchange="bindshowTimeChange">
+        <view class="picker">
+          {{pshowTime || showTime}}
+        </view>
+      </picker>
+      <picker name="showTime_time" mode="time" value="{{pshowTime_time || showTime_time}}" start="00:00" end="23:59" bindchange="bindshowtime_timeChange">
+        <view class="picker">
+          {{pshowTime_time || showTime_time}}
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view wx:if="{{choose=== 'activity'}}" class='item'>
+    <view class='itemTitle'>开始日期</view>
+    <view class='mas'>
+      <picker name="startdate" mode="date" value="{{pstartdate || startdate}}" start="2018-06-01" end="2018-12-01" bindchange="bindstartDateChange">
+        <view class="picker">
+          {{pstartdate || startdate}}
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view wx:else class='item'>
+    <view class='itemTitle'>抢票时间</view>
+    <view class='mas'>
+      <picker name="saletime" mode="date" value="{{psaletime || saletime}}" start="2018-06-01" end="2018-12-01" bindchange="bindsaletimeChange">
+        <view class="picker">
+          {{psaletime || saletime}}
+        </view>
+      </picker>
+      <picker name="saletime_time" mode="time" value="{{psaletime_time || saletime_time}}" start="00:00" end="23:59" bindchange="bindsaletime_timeChange">
+        <view class="picker">
+          {{psaletime_time || saletime_time}}
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view wx:if="{{choose=== 'activity'}}" class='item'>
+    <view class='itemTitle'>主办方</view>
+    <view class='mas'>
+      <input type="text" placeholder="请输主办方" placeholder-class="holder" name="sponsor" value='{{passData.sponser || sponsor}}'></input>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='itemTitle'>联系电话</view>
+    <view class='mas'>
+      <input type="number" placeholder="请输入联系人号码" placeholder-class="holder" name="cPhone" value='{{passData.cPhone || cPhone}}'></input>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='itemTitle'>报名人数</view>
+    <view class='mas'>
+      <input type="number" placeholder="请输入最大报名人数" placeholder-class="holder" name="totalNum" value='{{passData.totalNum || totalNum}}'></input>
+    </view>
+  </view>
+  <view wx:if="{{choose=== 'activity'}}" class='item'>
+    <view class='itemTitle'>活动类型</view>
+    <view wx:if="{{modify}}" class='mas'>
+      <picker bindchange="bindPickerChange" value="{{type}}" range="{{array}}">
+        <view class="picker">
+          {{array[type]}}
+        </view>
+      </picker>
+    </view>
+    <view wx:else class='mas'>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='item-textarea'>
+    <view class='itemTitle'>活动详情</view>
+    <view class='textarea'>
+      <textarea name="description" auto-height placeholder="请输入活动详情" value="{{passData.detail}}"></textarea>
+    </view>
+  </view>
+  <view wx:if="{{modify}}">
+    <view wx:for="{{passDataimg}}" wx:key="index" class='item-imgs'>
+      <image style="width:150px;height:150px;background-color: #eeeeee;" wx:if="{{item}}" mode='scaleToFill' src="{{passDataimg[index]}}" bindtap="showImgs"/>
+    </view>
+  </view>
+  <view wx:else>
+    <view wx:for="{{imageShow}}" wx:key="index" class='item-imgs'>
+      <image style="width:150px;height:150px;background-color: #eeeeee;" wx:if="{{item}}" mode='scaleToFill' src="{{imageSrc[index]}}" bindtap="showImgs"/>
+    </view>
+  </view>
+  <view class='item'>
+    <button wx:if="{{imageSrc.length === 0}}" name="photos" type="primary" size="large" bindtap="chooseImgs" hover-class="defaultTap">选择图片</button>
+    <button wx:else name="photos" type="primary" size="large" bindtap="chooseImgs" hover-class="defaultTap">重新选择</button>
+  </view>
+  <view class='item'>
+    <button wx:if="{{modify}}" form-type="submit">确认修改</button>
+    <button wx:elif="{{choose==='activity'}}" form-type="submit">添加比赛</button>
+    <button wx:else form-type="submit">添加表演</button>
+  </view>
+</form>

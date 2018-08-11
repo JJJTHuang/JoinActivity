@@ -1,0 +1,29 @@
+/* components/me_item/me_item.wxss */
+.item{
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  align-items: center;
+  line-height: 100rpx;  
+}
+.img{
+  margin-left: 20rpx;
+  padding-top: 20rpx;
+  width:7%;
+}
+.name{
+  padding-left:20rpx;
+  font-size: 30rpx;
+  width:43%;
+}
+.detail{
+  padding-top: 10rpx;  
+  position: absolute;
+  right: 20rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.line{
+  border-bottom: 1rpx solid #ccc;
+  opacity: 0.2;
+}

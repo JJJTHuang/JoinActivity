@@ -1,0 +1,42 @@
+<!--pages/ticket/ticket.wxml-->
+<search bind:action='searchTicket' />
+<view wx:if="{{show}}">
+  <view class='hot'>
+    <view class='hot_title'>热门活动</view>
+    <view class='scroll'>
+      <scroll-view class='scroll-view_H' scroll-x style="width: 100%">
+        <block wx:for="{{hots}}" wx:for-item="hot" wx:key='unique'>
+          <view class='hot_item' bindtap='goMessage' data-show="{{hot}}">
+            <view class='post'>
+              <view class='poster'>
+                <image src='{{hot.posters[0]}}' mode='widthFix' style='width:180rpx;'></image>
+              </view>
+            </view>
+            <view class='name'>{{hot.title}}</view>
+            <view class='time'>{{hot.showTime}}</view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  <view class='all'>
+    <view class='hot_title'>全部</view>
+    <block wx:for="{{shows}}" wx:key="unique">
+      <view bindtap='goMessage' data-show="{{item}}">
+        <ticket ticket="{{item}}">
+        </ticket>
+      </view>
+    </block>
+    <view class='nomore' wx:if='{{nomore}}'>没有更多</view>
+  </view>
+</view>
+<view wx:else>
+  <view class='tips'>搜索结果：</view>
+  <block wx:for="{{searchShows}}" wx:key="unique">
+    <view bindtap='goActivity' data-competition='{{item}}'>
+      <ticket ticket="{{item}}">
+        </ticket>
+    </view>
+  </block>
+  <view wx:if="{{showNull}}" class='show-null'>查无结果</view>
+</view>

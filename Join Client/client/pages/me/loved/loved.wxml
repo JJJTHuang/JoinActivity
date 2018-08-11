@@ -1,0 +1,23 @@
+<!--pages/me/loved/loved.wxml-->
+<view class='joined'>
+  <currentTab currentTab="{{currentTab}}" navs="{{navs}}">
+    <view slot="lovedActivity">
+       <block wx:for="{{lovedCompetitions}}" wx:key="unique">
+        <view bindtap='goActivity' data-competition='{{item}}'>
+          <activity activity="{{item}}">
+          </activity>
+        </view>
+      </block>
+      <view wx:if="{{showCompetitionsNull}}" class='show-null'>你没有收藏的活动</view>
+    </view>
+    <view slot="lovedTicket">
+      <block wx:for="{{lovedShows}}" wx:key="unique">
+        <view bindtap='goMessage' data-show="{{item}}">
+        <ticket ticket="{{item}}">
+        </ticket>
+        </view>
+      </block>
+      <view wx:if="{{showShowsNull}}" class='show-null'>你没有收藏的门票</view>
+    </view>
+  </currentTab>
+</view>

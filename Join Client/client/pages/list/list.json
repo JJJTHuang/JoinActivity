@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "分类",
+  "usingComponents": {
+    "activity": "/components/activity/activity",
+    "search": "/components/search/search",
+    "currentTab": "/components/currentTab/currentTab"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "light"
+}

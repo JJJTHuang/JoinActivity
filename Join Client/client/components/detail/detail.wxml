@@ -1,0 +1,11 @@
+<!--components/detail/detail.wxml-->
+<view class='detail'>
+  <view>
+    <view class='name'>{{activities.title}}</view>
+    <!--<view class='release'>最新发布:{{activity.date}}</view>-->
+  </view>
+  <view>
+    <view class='issuer'>发布人：{{activities.builderName}}</view>
+    <view class='joined'>参与人数：<span>{{activities.joined}}</span></view>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+{
+  "usingComponents":{
+    "search": "/components/search/search",            
+    "activity":"/components/activity/activity"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "light"
+}

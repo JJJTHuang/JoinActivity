@@ -1,0 +1,86 @@
+/* pages/activity/activity.wxss */
+/* 头部排版 */
+.head{
+  position: relative;
+  padding: 40rpx 0;
+  display: flex;
+  border-bottom: 1rpx solid #ccc;
+}
+.poster{
+  width: 36%;
+  padding-left: 40rpx;
+}
+.name{
+  font-size: 34rpx;
+  font-weight: bold;
+}
+/* 报名情况 */
+.date,.sponser,.tel{
+  font-size: 30rpx;
+  padding-top: 14rpx;
+}
+.waiting,.start,.finish{
+  margin-top: 14rpx;
+  display: inline-block;
+  font-size: 24rpx;
+  padding: 5rpx;
+  border-radius: 5rpx;
+}
+.waiting{
+  border: 1rpx solid #ffc34d;
+  color: #ffc34d;
+}
+.start{
+  border: 1rpx solid #009933;
+  color: #009933;
+}
+.finish{
+  border: 1rpx solid #ccc;
+  color: #ccc;
+}
+.love{
+  position: absolute;
+  right: 40rpx;
+  bottom: 30rpx;
+}
+/* detail */
+.detail{
+  padding: 40rpx;
+}
+.title{
+  font-size: 32rpx;
+  font-weight: 600;
+  padding-bottom: 15rpx;
+}
+.text{
+  text-indent: 60rpx;
+  font-size: 30rpx;
+  padding-bottom: 30rpx;
+}
+.img{
+  margin-bottom: 150rpx;
+}
+/* 报名按钮 */
+.join{
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  padding: 30rpx 0; 
+  background-color: white;
+  box-shadow: 0rpx -1rpx 20rpx #fff; 
+  text-align: center;
+}
+.join button{
+  width: 600rpx;
+  background-color: #99ccb6;
+  border: 0;
+  color: white;
+  border-radius: 60rpx;
+}
+.tips{
+  text-indent: 60rpx;
+  text-align: left;
+  color: red;
+  font-size: 26rpx;
+  padding: 0rpx 20rpx 20rpx;
+}

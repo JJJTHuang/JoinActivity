@@ -1,0 +1,33 @@
+/* components/form/form.wxss */
+.item {
+  font-size: 30rpx;
+  margin: 0 20rpx;
+  border-bottom: 1rpx solid #ccc;
+  line-height: 120rpx;
+  height: 120rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+.itemTitle {
+  width: 20%;
+  font-weight: bold;
+  align-items: center;
+}
+
+.mas {
+  width: 80%;
+  align-items: center;
+  line-height: 40rpx;
+}
+
+button {
+  width: 100%;
+  color: white;
+  background-color: #99ccb6;
+}

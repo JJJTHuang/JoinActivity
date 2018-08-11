@@ -1,0 +1,32 @@
+/* pages/add/add.wxss */
+.choose{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5)
+}
+.window{
+  align-self: center;
+  margin: auto;
+  width: 50%;
+  background-color: white;
+  padding: 40rpx;
+  border-radius: 20rpx;
+  text-align: center;
+}
+.question{
+  padding-bottom: 20rpx;
+}
+.window button{
+  display: inline-block;
+  padding: 0 40rpx; 
+  color: white;
+  background-color: #99ccb6;
+  margin-right: 20rpx;
+}
+button:last-child{
+  margin-right: 0rpx;
+}
+button::after {
+  border: 0;
+} 

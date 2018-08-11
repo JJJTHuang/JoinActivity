@@ -1,0 +1,43 @@
+<!--pages/list/list.wxml-->
+<view class='content'>
+  <search bind:action='searchActivity' cancel="true"></search>
+  <currentTab wx:if="{{currentTabShow}}" currentTab="{{currentTab}}" navs="{{navs}}" bind:action='switchNav'>
+    <view slot="science">
+       <block wx:for="{{science}}" wx:key="unique">
+        <view bindtap='goActivity' data-competition='{{item}}'>
+          <activity activity="{{item}}">
+      </activity>
+        </view>
+      </block>
+      <view class='nomore' wx:if='{{nomore0}}'>没有更多</view> 
+    </view>
+    <view slot="art">
+       <block wx:for="{{art}}" wx:key="unique">
+        <view bindtap='goActivity' data-competition='{{item}}'>
+          <activity activity="{{item}}">
+      </activity>
+        </view>
+      </block> 
+      <view class='nomore' wx:if='{{nomore1}}'>没有更多</view>
+    </view>
+    <view slot="physical">
+       <block wx:for="{{physical}}" wx:key="unique">
+        <view bindtap='goActivity' data-competition='{{item}}'>
+          <activity activity="{{item}}">
+      </activity>
+        </view>
+      </block> 
+      <view class='nomore' wx:if='{{nomore2}}'>没有更多</view>
+    </view>
+  </currentTab>
+  <view wx:else>
+    <view class='tips'>搜索结果：</view>
+    <block wx:for="{{competitions}}" wx:key="unique">
+        <view bindtap='goActivity' data-competition='{{item}}'>
+          <activity activity="{{item}}">
+      </activity>
+        </view>
+      </block> 
+      <view wx:if="{{showNull}}" class='show-null'>查无结果</view>
+  </view>
+</view>

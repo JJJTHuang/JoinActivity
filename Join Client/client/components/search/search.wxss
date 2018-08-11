@@ -1,0 +1,37 @@
+/* components/searchBar/search.wxss */
+.search{
+  display: flex;
+  flex-direction: row;
+  padding: 10rpx;
+  background-color: #99ccb6;
+}
+.searchBg{
+  position: relative;
+  background-color: #f2f2f2;
+  width: 100%;
+  border-radius: 10rpx;
+  height: 60rpx;
+}
+.search input{
+  margin-left: 20rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.clear{
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+  color: #707070;
+  z-index: 9999;
+  height: 60rpx;
+  width: 50rpx;
+}
+.holder{
+  font-size: 26rpx;
+}
+.btn{
+  color: #fff;
+  font-size: 26rpx;
+  line-height: 60rpx;
+  margin-left: 20rpx;
+}

@@ -1,0 +1,10 @@
+<!--components/currentTab/currentTab.wxml-->
+  <view class='type'>
+    <view class="{{currentTab==index?'select':'default'}}" data-current='{{index}}' bindtap='switchNav' wx:for="{{navs}}" wx:key='unique'>{{item.name}}</view>
+  </view>
+  <view class='hr'></view>
+  <swiper current='{{currentTab}}' style='height:800PX;' bindchange='currentChange'>
+    <swiper-item wx:for="{{navs}}" wx:key="{{item.type}}">
+      <slot name="{{item.type}}"></slot>
+    </swiper-item>
+  </swiper>

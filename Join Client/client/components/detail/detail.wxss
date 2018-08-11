@@ -1,0 +1,41 @@
+/* components/detail/detail.wxss */
+.detail{
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+.detail>view{
+  display: flex;
+  width: 100vw;
+  padding-bottom: 5rpx;
+}
+.name{
+  flex: 4;
+  padding-left: 20rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.release{
+  flex: 3;
+  padding-right: 20rpx;
+  text-align: right;
+  font-size: 30rpx;
+}
+.issuer{
+  flex: 4;
+  padding-left: 20rpx;
+  font-size: 34rpx;
+  color: #4d9978;
+}
+.joined{
+  flex: 3;
+  padding-right: 20rpx;
+  text-align: right;
+  font-size: 34rpx;
+  color: #4d9978; 
+}
+.joined span{
+  color: red;
+}

@@ -1,0 +1,8 @@
+<!--components/searchBar/search.wxml-->
+<view class="search">
+  <view class='searchBg' style="{{cancel?'width:88%':''}}">
+    <input type='text' placeholder='请输需搜索活动' placeholder-class='holder' bindinput='searching' disabled="{{disabled}}" value='{{content}}'></input>
+    <view class='clear' wx:if='{{clear}}' bindtap='clearInput'>×</view>
+  </view>
+  <view class='btn' wx:if="{{cancel}}" bindtap='backHome'>取消</view>
+</view>

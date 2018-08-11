@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "认证",
+  "usingComponents": {
+    "formIdentity": "/components/formIdentity/formIdentity"
+  }
+}

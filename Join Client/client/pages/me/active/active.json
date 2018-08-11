@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "currentTab": "/components/currentTab/currentTab"
+  }
+}

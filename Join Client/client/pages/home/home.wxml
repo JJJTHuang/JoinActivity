@@ -1,0 +1,28 @@
+<!--pages/home/home.wxml-->
+<search bindtap='goList' disabled="ture"></search>
+<view class='swiper'>
+  <swiper indicator-dots='{{indicatorDots}}' autoplay='{{autoplay}}' interval='{{interval}}' duration='{{duration}}'>
+    <block wx:for="{{swiperUrls}}" wx:key="unique">
+      <swiper-item>
+        <image src='{{item.image}}' class='silde-image' bindtap='swiperActivity' data-competitionId='{{item.competitionId}}'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class='type'>
+  <view class='type_item' wx:for="{{types}}" bindtap='selectNav2' id='{{index}}' wx:key="unique">
+    <view class='icon'>
+      <image src='{{item.img}}' mode='widthFix' style='width:80rpx;'></image>
+    </view>
+    <view class='type_name'>{{item.name}}</view>
+  </view>
+</view>
+<view class='activity_list'>
+  <block wx:for="{{competitions}}" wx:key="unique" wx:for-item="competition">
+    <view bindtap='goActivity'data-competition='{{competition}}'>
+      <activity activity="{{competition}}">
+      </activity>
+    </view>
+  </block>
+  <view class='nomore' wx:if='{{nomore}}'>没有更多</view>
+</view>

@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/me/me",
+    "pages/ticket/ticket",
+    "pages/list/list",
+    "pages/activity/activity",
+    "pages/applyForm/applyForm",
+    "pages/me/changeMessage/changeMessage",
+    "pages/me/joined/joined",
+    "pages/me/loved/loved",
+    "pages/me/add/add",
+    "pages/me/active/active",
+    "pages/me/identification/identification",
+    "pages/ticket/ticketMessage/ticketMessage"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#99ccb6",
+    "navigationBarTitleText": "课外活动",
+    "navigationBarTextStyle": "white",
+    "backgroundColorTop": "#99ccb6",
+    "backgroundColorBottom": "#fff"
+  },
+  "tabBar": {
+    "selectedColor": "#99ccb6",
+    "borderStyle": "white",
+    "color": "#707070",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/icon/home_0.png",
+        "selectedIconPath": "images/icon/home_1.png"
+      },
+      {
+        "pagePath": "pages/ticket/ticket",
+        "text": "门票",
+        "iconPath": "images/icon/ticket_0.png",
+        "selectedIconPath": "images/icon/ticket_1.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "images/icon/me_0.png",
+        "selectedIconPath": "images/icon/me_1.png"
+      }
+    ]
+  }
+}

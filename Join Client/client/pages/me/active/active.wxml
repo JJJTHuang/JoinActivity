@@ -1,0 +1,43 @@
+<!--pages/home/home.wxml-->
+<currentTab currentTab="{{currentTab}}" navs="{{navs}}">
+  <view slot="activities">
+    <block wx:for="{{activities}}" wx:key="unique">
+      <view class='detail'>
+        <view>
+          <view class='name'>{{item.title}}</view>
+          <view wx:if="{{item.pass}}" class='release'>已发布</view>
+          <view wx:else class='unrelease'>待审核</view>
+        </view>
+        <view>
+          <!--<view class='issuer'>发布人：{{item.builderName}}</view>-->
+          <view class='issuer'>类型:{{arr[item.type]}}</view>
+          <view class='joined'>参与人数:<span>{{item.joined}}</span></view>
+        </view>
+        <view>
+          <button wx:if="{{!item.pass}}" class='btn' size="mini" bindtap="goActiModify" data-competition='{{item}}'>修改</button>
+          <button class='btn' size="mini" bindtap='goActivity' data-competition='{{item}}'>查看详情</button>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view slot="show">
+    <block wx:for="{{show}}" wx:key="unique">
+      <view class='detail'>
+        <view>
+          <view class='name'>{{item.title}}</view>
+          <view wx:if="{{item.pass}}" class='release'>已发布</view>
+          <view wx:else class='unrelease'>待审核</view>
+        </view>
+        <view>
+          <view class='issuer'>发布人：{{item.builderName}}</view>
+          <view class='joined'>参与人数：<span>{{item.joined}}</span></view>
+        </view>
+        <view>
+          <button wx:if="{{!item.pass}}" class='btn' size="mini" bindtap="goShowModify" data-show='{{item}}'>修改</button>
+          <button class='btn' size="mini" bindtap='goMessage' data-show='{{item}}'>查看详情</button>
+        </view>
+      </view>
+    </block>
+  </view>
+</currentTab>
+<button class='add' bindtap='add'>+</button>

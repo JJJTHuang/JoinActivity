@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "活动/门票",
+  "usingComponents": {
+    "activity": "/components/activity/activity",
+    "currentTab": "/components/currentTab/currentTab",
+    "ticket": "/components/ticket/ticket"
+  }}

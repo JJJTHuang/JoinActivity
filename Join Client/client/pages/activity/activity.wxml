@@ -1,0 +1,45 @@
+<!--pages/activity/activity.wxml-->
+<view class='content'>
+  <view class='head'>
+    <view class='poster'>
+      <image src='{{competition.posters[0]}}' mode='widthFix' style='width:220rpx;'></image>
+    </view>
+    <view class='data'>
+      <view class='name'>{{competition.title}}</view>
+      <view class='date'>报名时间：{{competition.startDate+'--'+competition.deadline}}</view>
+      <view class='sponser'>主办方：{{competition.sponser}}</view>
+      <view class='tel'>联系人：{{competition.cPhone}}</view>
+      <view class='type'>
+        <view class='waiting' wx:if="{{competition.state==0}}">未开始</view>
+        <view class='start' wx:elif="{{competition.state==1}}">可报名</view>
+        <view class='finish' wx:else>已结束</view>
+      </view>
+      <view class='love' bindtap='changeLove'>
+        <image src="{{loved?'../../images/icon/love_1.png':'../../images/icon/love_0.png'}}" mode="widthFix"style='width:70rpx;'></image>
+      </view>
+    </view>
+  </view>
+  <view class='detail'>
+    <view class='title'>活动详情</view>
+    <view class='text'>{{competition.detail}}</view>
+    <view class='title'>活动海报/传单</view>
+    <view class='img' wx:for="{{competition.posters}}" wx:key="unique">
+      <image src='{{item}}' mode='widthFix' style='width:100%;'></image>
+    </view>
+  </view>
+  <view wx:if="{{show}}" class='join'>
+    <view wx:if="{{!login}}">
+      <button style='color:rgb(255,255,255)' bindtap="goLogin">去登录</button>
+    </view>
+    <view wx:else>
+      <button style='color:rgba(255,255,255,0.6)' wx:if="{{competition.state==0}}">本活动未开始</button>
+      <view wx:elif="{{joined}}">
+      <view class='tips' >你已参加本活动，如要取消请拨打联系人电话，如要修改资料可在活动报名时间结束前到我的/报名信息内修改，最终报名信息以该表为准。</view>
+      <button style='color:rgba(255,255,255,0.6)'>你已参与本活动</button>
+      </view>
+      <button style='color:rgba(255,255,255,0.6)' wx:elif="{{!joined && competition.state==1 && competition.full == true}}">本活动名额已满</button>
+      <button bindtap='applyFrom' wx:elif="{{!joined && competition.state==1 && competition.full == false}}">马上报名</button>
+      <button style='color:rgba(255,255,255,0.6)' wx:else>本活动已结束</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+/* pages/me/loved/loved.wxss */
+.show-null{
+  font-size: 34rpx;
+  color: #707070;
+  padding: 20rpx 0;
+  text-align: center
+}
